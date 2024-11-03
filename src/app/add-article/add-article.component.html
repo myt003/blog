@@ -1,0 +1,22 @@
+<form>
+    <fieldset >
+      <legend>Ajout d'un article :</legend>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label" id="title" >Titre :</label>
+        <input type="text"  class="form-control" #title>
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label" id="desc" >Description :</label>
+        <input type="text"  class="form-control" #desc>
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label" id="photo">photo :</label>
+        <input type="text"  class="form-control"  #photo>
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label" id="date" >Date de publication :</label>
+        <input type="text"  class="form-control" #date>
+      </div>
+    </fieldset>
+    <button type="button" class="btn btn-dark" (click)="addArticle(desc.value, title.value, photo.value,date.value)">Valider</button>
+</form>

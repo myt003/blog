@@ -1,0 +1,38 @@
+<h1>Listes des Articles</h1>
+
+<div class="container">
+    <img style="height: 20px;width: auto;"   src="loupe.png">
+    <input type="text" placeholder="Search" #search>
+    
+    <button class="btn btn-success" (click)="searching(search.value,'find')" >Rechercher</button>
+</div>
+@if (action === "add") {
+    <app-add-article [id]="Articles[Articles.length-1].id" (ArticleCreated)="addArticle($event)"></app-add-article>
+}
+@if (action === 'find') {
+   
+    <app-find-article [ArticlesF]="filteredArticles" ></app-find-article>
+}
+
+
+<div class="container" >
+    @for (Article of Articles; track $index) {
+       
+        <img style="height: 150px;width: auto;" src={{Article.photo}}><h5>Le Titre :</h5>
+        <h2>{{Article.title}}</h2>
+        <h3>Description : </h3>
+        <p>{{Article.description}}</p>
+        <h4>Date de publication :</h4>
+        <p>{{Article.date}}</p>
+        <br>
+        <div class="container"><button class="btn btn-success"  (click)="plus(Article.id)">Up</button>
+            <button class="btn btn-danger" (click)="minus(Article.id)">Down</button>
+    </div>
+    <br>
+        
+    }
+</div>
+<div class="container">
+<button class="btn btn-primary" (click)="changeAction('add')">Ajouter un Article</button>
+
+</div>

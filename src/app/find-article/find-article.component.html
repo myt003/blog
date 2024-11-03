@@ -1,0 +1,16 @@
+<div class="container" >
+    @for (Article of ArticlesF; track $index) {
+       
+        <img style="height: 150px;width: auto;" src={{Article.photo}}><h5>Le Titre :</h5>
+        <h2>{{Article.title}}</h2>
+        <h3>Description : </h3>
+        <p>{{Article.description}}</p>
+        <h4>Date de publication :</h4>
+        <p>{{Article.date}}</p>
+        <br>
+        <div class="container"><button   class="btn btn-success" >OK</button>
+    </div>
+    <br>
+        
+    }
+</div>
